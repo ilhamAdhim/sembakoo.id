@@ -4,7 +4,7 @@ class DataSource {
     static getData(country = null) {
 
         // Confirmed, recovered, death data from certain country
-        return axios.get(`https://data.covid19.go.id/public/api/update.json`)
+        return axios.get(`https://jibs.my.id/api/harga_komoditas`)
     }
 }
 export default DataSource;

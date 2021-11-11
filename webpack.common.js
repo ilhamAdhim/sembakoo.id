@@ -36,7 +36,8 @@ module.exports = {
         /* HTML Webpack Plugin */
         new HtmlWebpackPlugin({
             template: "./src/index.html",
-            filename: "index.html"
+            filename: "index.html",
+            favicon: './src/assets/favicon.ico'
         }),
         new CopyWebpackPlugin({
             patterns: [
@@ -45,6 +46,6 @@ module.exports = {
                     to: path.resolve(__dirname, './dist/src/assets')
                 }
             ]
-        })
+        }),
     ]
 }
