@@ -1,5 +1,5 @@
-#book_list,
-#finished_book_list {
+#commodity_list,
+#finished_commodity_list {
   display: flex;
   flex-flow: row wrap;
   gap: 2em;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.card_book {
+.card_commodity {
   background-color: aliceblue;
   width: 30%;
   height: 100%;
@@ -32,30 +32,30 @@ hr {
   padding: 0em;
 }
 
-.book_title {
+.commodity_title {
   padding: 1em;
   font-weight: 500;
   font-size: 1em;
 }
 
-.book_details {
+.commodity_details {
   display: flex;
   justify-content: space-between;
 }
 
-.book_image {
+.commodity_image {
   height: 250px;
   padding: 1em;
   object-fit: contain;
 }
 
-.book_year,
-.book_author {
+.commodity_year,
+.commodity_author {
   padding: 0.5em;
   font-size: 0.8em;
 }
 
-.book_actions {
+.commodity_actions {
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,7 @@ hr {
 }
 /* Small screen */
 @media only screen and (max-width: 640px) {
-  .card_book {
+  .card_commodity {
     background-color: aliceblue;
     width: 45%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;

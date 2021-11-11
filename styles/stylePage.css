@@ -42,10 +42,29 @@ main {
   margin-left: 10em;
 }
 
-.image_doctor {
+.image_cart {
   display: block;
   margin: auto;
   width: 80%;
+}
+
+.error-fetch-data img {
+  height: 400px;
+  width: 400px;
+}
+
+.error-caption,
+.error-title {
+  color: #da0000;
+  font-weight: 700;
+}
+
+.error-title {
+  font-size: 2em;
+}
+
+.highest-price-commodities {
+  margin: 0 10vw 2em;
 }
 
 #content {
@@ -56,39 +75,17 @@ main {
   justify-content: space-around;
 }
 
-#card_bookshelves {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-}
-
 #last-updated {
   margin-top: 1em;
 }
 
-.card_bookshelves_header {
-  padding: 1em 2em;
-  display: flex;
-  justify-content: space-between;
-}
-
-.book_category {
-  text-align: start;
-  font-size: 1em;
-  font-weight: 700;
-  position: relative;
-  text-decoration: underline;
-  top: 50%;
-  -webkit-transform: translateY(25%);
-  -ms-transform: translateY(25%);
-  transform: translateY(25%);
-}
-
-.image_doctor img {
+.image_cart img {
   z-index: 2;
   display: block;
 }
 
 #search_section {
-  margin: 0 0 4em 0;
+  margin: 0 0 5em 0;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -130,9 +127,17 @@ main {
   .text_jumbotron_section h1 {
     margin-top: 0.5em;
   }
-  .image_doctor svg {
+  .image_cart svg,
+  .error-fetch-data img {
     width: 100%;
     margin: 0;
+  }
+  .error-title {
+    margin-top: 1em;
+  }
+
+  .highest-price-commodities {
+    margin: 3em 10vw;
   }
 
   #content {
@@ -143,16 +148,9 @@ main {
     justify-content: space-evenly;
   }
 
-  #card_bookshelves {
-    margin-top: 4em;
-    flex-basis: fit-content;
-    width: 100%;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
-  }
-
   #search_section {
     margin-top: 4em;
-    margin-bottom: -4em;
+    margin-bottom: -2em;
   }
 }
 
@@ -166,13 +164,13 @@ main {
   }
 
   .text_jumbotron_section {
-    margin-top: 12em;
     text-align: center;
     color: #da0000;
     width: 100%;
     margin: 4em 0 0 0;
   }
-  .image_doctor svg {
+  .image_cart svg,
+  .error-fetch-data img {
     width: 100%;
     margin: 0;
   }
@@ -185,9 +183,8 @@ main {
     justify-content: space-evenly;
   }
 
-  #card_bookshelves {
-    flex-basis: fit-content;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  .highest-price-commodities {
+    margin: 2em 10vw;
   }
 
   #search_section {

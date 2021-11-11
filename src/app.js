@@ -5,13 +5,12 @@ import "../styles/styles.css";
 import "../styles/stylePage.css";
 import "../styles/styles.css";
 import "../styles/buttons.css";
-import "../styles/modals.css";
-import "../styles/bookItem.css";
-import "../styles/form.css";
-import "../styles/animation.css";
 
 
 import main from "./view/main";
+import "./components/SearchBar";
+import "./components/CommodityList";
+import "./components/CommodityItem";
 
 
 document.addEventListener("DOMContentLoaded", main);

@@ -18,7 +18,7 @@
 
             <div class="text_jumbotron_section" data-aos="fade-right">
                 <h1 style="text-decoration: underline;"> Sembakoo.id </h1> <br>
-                <h5> 📉 Get latest average price for sembako </h5>
+                <h5> 📉 Get latest price for sembako </h5>
                 <h5 id="last-updated"> ⌚ Last updated on </h5>
                 <br>
                 <a href="#search_section">
@@ -27,22 +27,31 @@
                     </button>
                 </a>
             </div>
-            <div class="image_doctor" data-aos="zoom-out-left">
+            <div class="image_cart" data-aos="zoom-out-left">
                 <img src="./src/assets/undraw_shopping_app_flsj.svg" alt="gambar dokter">
             </div>
         </section>
-        <div id="search_section">
-            <input type="text" id="search_input" class="search_input" placeholder="Search Region . . ."
-                onkeypress="searchBookByEnter(event)">
-            <button id="btn_search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-        </div>
-        <section id="content">
 
+        <div class="highest-price-commodities">
+            <h2>Highest Price Commodities</h2>
+            <commodity-list></commodity-list>
+        </div>
+
+        <search-bar></search-bar>
+        <section id="content">
+            <div class="" style="display: flex;">
+                <div class="" style="width: 200px; height: 200px;">
+                    <img src="https://feriirawan-api.herokuapp.com/list/symbols/province/31/200" alt="">
+                </div>
+                <div class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Error iste nisi sint id consequatur
+                    accusamus,
+                    deserunt dolores a, non eligendi officia repudiandae? Tenetur totam vel consequatur odio quod eaque
+                    maiores.
+                </div>
+            </div>
         </section>
     </main>
-
     <footer id="footer">
         By Muhammad Ilham Adhim - 2021
     </footer>
