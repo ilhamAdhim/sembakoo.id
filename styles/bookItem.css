@@ -1,0 +1,100 @@
+#book_list,
+#finished_book_list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2em;
+  padding: 1em;
+  align-items: center;
+}
+
+.card_book {
+  background-color: aliceblue;
+  width: 30%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  margin-bottom: 1em;
+}
+
+.no_data_image {
+  margin-top: 15%;
+  width: 300px;
+}
+
+.caption_empty {
+  margin-top: 2em;
+  font-weight: 600;
+  color: grey;
+}
+
+hr {
+  background-color: #231e8f;
+  margin: 0em;
+  padding: 0em;
+}
+
+.book_title {
+  padding: 1em;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.book_details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book_image {
+  height: 250px;
+  padding: 1em;
+  object-fit: contain;
+}
+
+.book_year,
+.book_author {
+  padding: 0.5em;
+  font-size: 0.8em;
+}
+
+.book_actions {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.btn_delete,
+.btn_done {
+  border-radius: 0.3em;
+  border: none;
+  height: 2em;
+}
+
+.btn_delete {
+  color: grey;
+  transition: all ease-in-out 0.5s;
+  border: 1px solid transparent;
+}
+
+.btn_delete:hover {
+  color: red;
+  border: 1px solid red;
+}
+
+.btn_done {
+  color: grey;
+  transition: all ease-in-out 0.5s;
+  border: 1px solid transparent;
+}
+
+.btn_done:hover {
+  color: white;
+  background-color: green;
+}
+/* Small screen */
+@media only screen and (max-width: 640px) {
+  .card_book {
+    background-color: aliceblue;
+    width: 45%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  }
+}
