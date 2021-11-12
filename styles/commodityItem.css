@@ -1,18 +1,10 @@
-#commodity_list,
-#finished_commodity_list {
-  display: flex;
-  flex-flow: row wrap;
-  gap: 2em;
-  padding: 1em;
-  align-items: center;
-}
-
-.card_commodity {
+commodity-item {
   background-color: aliceblue;
   width: 30%;
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
   margin-bottom: 1em;
+  padding: 1em;
 }
 
 .no_data_image {
@@ -47,12 +39,6 @@ hr {
   height: 250px;
   padding: 1em;
   object-fit: contain;
-}
-
-.commodity_year,
-.commodity_author {
-  padding: 0.5em;
-  font-size: 0.8em;
 }
 
 .commodity_actions {
@@ -92,9 +78,18 @@ hr {
 }
 /* Small screen */
 @media only screen and (max-width: 640px) {
-  .card_commodity {
+  commodity-item {
     background-color: aliceblue;
-    width: 45%;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  }
+}
+
+/* Medium screen */
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  commodity-item {
+    background-color: aliceblue;
+    width: 29%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
   }
 }

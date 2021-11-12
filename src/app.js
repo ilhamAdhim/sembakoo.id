@@ -4,6 +4,7 @@ import 'regenerator-runtime'
 import "../styles/styles.css";
 import "../styles/stylePage.css";
 import "../styles/styles.css";
+import "../styles/commodityItem.css";
 import "../styles/buttons.css";
 
 

@@ -8,6 +8,7 @@
 
 body {
   color: #2d232e;
+  overflow-x: hidden;
 }
 
 body,
@@ -64,7 +65,20 @@ main {
 }
 
 .highest-price-commodities {
-  margin: 0 10vw 2em;
+  padding: 0 5vw 2em;
+}
+
+.highest-price-commodities h2 {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+commodity-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2em;
+  padding: 1em;
+  align-items: center;
 }
 
 #content {
@@ -95,6 +109,7 @@ main {
 .search_input {
   width: 20em;
   border: none;
+  outline: none;
 }
 
 .search_input:focus {
@@ -137,7 +152,11 @@ main {
   }
 
   .highest-price-commodities {
-    margin: 3em 10vw;
+    margin-top: 1em;
+  }
+
+  .highest-price-commodities h2 {
+    margin: 2em 0 1em 0;
   }
 
   #content {
@@ -184,7 +203,11 @@ main {
   }
 
   .highest-price-commodities {
-    margin: 2em 10vw;
+    margin-top: 2em;
+  }
+
+  .highest-price-commodities h2 {
+    margin: 2em 0 1em 0;
   }
 
   #search_section {

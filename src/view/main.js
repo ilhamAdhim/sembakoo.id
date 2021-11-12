@@ -13,34 +13,38 @@ const main = () => {
     const fetchData = async () => {
         try {
             resultAPI = await DataSource.getData();
-            let commodities = resultAPI.data.national_commodity_price
+            let commodities = resultAPI.data.national_commodity_price;
 
             // Assign to localStorage
             const parsed = JSON.stringify(resultAPI.data);
             localStorage.setItem(STORAGE_KEY, parsed);
 
-            console.log(commodities['Daging Ayam']);
+            console.log("fetch api berhasil");
+
             lastUpdatedElement.innerText += ` ${resultAPI.data.updated_at}`;
+            getHighestPriceForCommodities(resultAPI);
+
 
         } catch (error) {
-            loadDataFromCache()
+            loadDataFromCache();
         }
     }
 
     const getHighestPriceForCommodities = (data) => {
-        let highestPriceItem = []
+        let highestPriceItem = [];
         for (const key of Object.keys(data.national_commodity_price)) {
-            let province = _.maxBy(data.national_commodity_price[key], 'value')
+            let province = _.maxBy(data.national_commodity_price[key], 'value');
             if (key === "Cabai Rawit")
                 continue;
-            highestPriceItem.push({ item: key, province })
+            highestPriceItem.push({ item: key, province });
         }
 
+        // console.log(_.sortBy(highestPriceItem, 'province.value'))
         renderHighestPriceForCommodities(highestPriceItem)
     }
 
     const renderHighestPriceForCommodities = (highestPriceItem) => {
-        highestPriceCommoditiesElement.commodities = highestPriceItem
+        highestPriceCommoditiesElement.commodities = highestPriceItem;
     }
 
     // Fallback method : load from cache if API is down
@@ -48,17 +52,17 @@ const main = () => {
         try {
             const serializedData = localStorage.getItem(STORAGE_KEY);
             let data = JSON.parse(serializedData);
-            console.log("dari cachwe")
+            console.log("load dari cache");
             if (data !== null)
                 resultAPI = data;
 
             lastUpdatedElement.innerText += ` ${resultAPI.updated_at}`;
-            getHighestPriceForCommodities(resultAPI)
+            getHighestPriceForCommodities(resultAPI);
 
         } catch (error) {
             console.log("Data gagal diload", error);
             lastUpdatedElement.innerText = `Loading data...`;
-            renderErrorData()
+            renderErrorData();
         }
 
     }
@@ -68,7 +72,6 @@ const main = () => {
     }
 
     fetchData()
-
     searchBarElement.clickEvent = onButtonSearchClicked;
 }
 
@@ -82,7 +85,7 @@ const renderErrorData = () => {
         <div class="error-caption">
             Data cannot be loaded
         </div>
-    </div>`
+    </div>`;
 }
 
 export default main;
