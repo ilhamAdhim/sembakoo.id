@@ -108,9 +108,10 @@ commodity-list {
 }
 
 .search_input {
+  border: 0;
   width: 20em;
-  border: none;
-  outline: none;
+  outline: 0;
+  border-bottom: 1px solid #312e2e;
 }
 
 .search_input:focus {

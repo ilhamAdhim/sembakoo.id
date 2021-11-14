@@ -6,14 +6,7 @@ class CommodityItem extends HTMLElement {
     set commodity(commodity) {
         this._commodity = commodity;
         this.loadIconCommodity();
-        if (commodity.roleElement === "highestPriceElement")
-            this.render();
-        else
-            this.renderSearchResult();
-    }
-
-    loadLogoProvince() {
-
+        this.render();
     }
 
     loadIconCommodity() {
@@ -25,16 +18,10 @@ class CommodityItem extends HTMLElement {
         this.innerHTML = `
         <img src="${this._commodity['commodity_icon']}" class="commodity_image">
         <div class="card_commodity">
-            <div style="">${this._commodity.province.display}</div>
-            <div style="">${this._commodity.item}</div>
-            <div style="">${this._commodity.province.name}</div>
+            <div style="">${this._commodity?.province?.display || this._commodity.harga}</div>
+            <div style="">${this._commodity?.item}</div>
+            <div style="">${this._commodity?.province?.name || ''}</div>
         </div>
-        `;
-    }
-
-    renderSearchResult() {
-        this.innerHTML = `
-        hasil search ${this._commodity.item}
         `;
     }
 }

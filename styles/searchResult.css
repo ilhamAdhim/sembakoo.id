@@ -1,0 +1,22 @@
+search-result {
+  display: flex;
+  margin-top: 6em;
+  padding: 0 5vw;
+  justify-content: center;
+  text-align: center;
+  gap: 1em;
+}
+
+/* For small screen */
+@media only screen and (max-width: 640px) {
+  search-result {
+    flex-direction: column;
+  }
+}
+
+/* For medium screen */
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  search-result {
+    flex-direction: column;
+  }
+}

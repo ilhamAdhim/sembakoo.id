@@ -5,7 +5,6 @@ class CommodityList extends HTMLElement {
         super();
     }
     set commodities(commodities) {
-        console.log(commodities)
         this._commodities = commodities;
         this.render();
     }
@@ -26,7 +25,7 @@ class CommodityList extends HTMLElement {
     }
 
     render() {
-        this._commodities.forEach(commodity => {
+        this._commodities?.forEach(commodity => {
             const createCommodityItemElement = document.createElement("commodity-item");
             createCommodityItemElement.commodity = commodity;
             this.appendChild(createCommodityItemElement);
