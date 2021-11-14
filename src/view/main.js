@@ -14,17 +14,17 @@ const main = () => {
 
     const fetchData = async () => {
         try {
-            resultAPI = await DataSource.getData();
-
+            resultAPI = await (await DataSource.getData()).data;
             // Assign to localStorage
-            const parsed = JSON.stringify(resultAPI.data);
+            const parsed = JSON.stringify(resultAPI);
             localStorage.setItem(STORAGE_KEY, parsed);
 
             console.log("fetch api berhasil");
 
-            lastUpdatedElement.innerText += ` ${resultAPI.data.updated_at}`;
-            getHighestPriceForCommodities(resultAPI.data);
+            lastUpdatedElement.innerText += ` ${resultAPI.updated_at}`;
+            getHighestPriceForCommodities(resultAPI);
         } catch (error) {
+            console.log(error)
             loadDataFromCache();
         }
     }
@@ -73,7 +73,7 @@ const main = () => {
 
     const onButtonSearchClicked = () => {
         let provincePriceResult = [];
-
+        console.log(resultAPI)
         for (const key of Object.keys(resultAPI.national_commodity_price)) {
 
             let searchResult = _.find(resultAPI.national_commodity_price[key], (item) => {
