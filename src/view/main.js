@@ -90,7 +90,7 @@ const main = () => {
         console.log(`Hasil search : ${searchBarElement.value}`, provincePriceResult)
 
         if (provincePriceResult.length === 0)
-            renderErrorData("Check your province again")
+            renderErrorData(`Cannot find province : ${_.startCase(searchBarElement.value)}`)
         else
             renderSearchResult(provincePriceResult)
 
@@ -102,7 +102,7 @@ const main = () => {
                 <div class="error-title">
                     Sorry
                 </div>
-                <img src="./src/assets/undraw_barbecue_3x93.svg">
+                <img src="./src/assets/not_found.svg">
                 <div class="error-caption">
                     ${logError}
                 </div>

@@ -82,6 +82,10 @@ commodity-list {
   align-items: center;
 }
 
+.text_jumbotron_section h1 {
+  text-decoration: underline;
+}
+
 #content {
   display: flex;
   gap: 1em;
