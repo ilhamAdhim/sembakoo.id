@@ -26,14 +26,16 @@ class CommodityItem extends HTMLElement {
         let displayPrice;
         if (this._commodity?.province?.value === null || this._commodity.harga === null)
             displayPrice = 'Price unavailable'
-        else
+        else {
             displayPrice = this._commodity?.province?.value || this._commodity.harga
+            displayPrice = this.formatIDR(displayPrice).replace('IDR', 'Rp')
+        }
 
         this.innerHTML = `
         <img src="${this._commodity['commodity_icon']}" class="commodity_image">
         <div class="card_commodity">
             <div class="commodity_name">${this._commodity?.item}</div>
-            <div class="commodity_price">${this.formatIDR(displayPrice).replace('IDR', 'Rp')}</div>
+            <div class="commodity_price">${displayPrice}</div>
             <div class="commodity_province">${this._commodity?.province?.name || ''}</div>
         </div>
         `;

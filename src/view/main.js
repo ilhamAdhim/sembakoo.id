@@ -88,7 +88,6 @@ const main = () => {
             provincePriceResult.push({ item: key, harga: parseInt(searchResult.value) || null })
         }
         provincePriceResult = _.sortBy(provincePriceResult, 'harga')
-
         console.log(`Hasil search : ${searchBarElement.value}`, provincePriceResult)
 
         if (provincePriceResult.length === 0)
