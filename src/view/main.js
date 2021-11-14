@@ -1,5 +1,5 @@
 import DataSource from '../data/data-source.js';
-import _ from 'lodash';
+import _, { values } from 'lodash';
 
 const STORAGE_KEY = 'PRICE_COMMODITY_APPS'
 
@@ -13,8 +13,6 @@ const main = () => {
     const fetchData = async () => {
         try {
             resultAPI = await DataSource.getData();
-            let commodities = resultAPI.data.national_commodity_price;
-
             // Assign to localStorage
             const parsed = JSON.stringify(resultAPI.data);
             localStorage.setItem(STORAGE_KEY, parsed);
@@ -22,9 +20,7 @@ const main = () => {
             console.log("fetch api berhasil");
 
             lastUpdatedElement.innerText += ` ${resultAPI.data.updated_at}`;
-            getHighestPriceForCommodities(resultAPI);
-
-
+            getHighestPriceForCommodities(resultAPI.data);
         } catch (error) {
             loadDataFromCache();
         }
@@ -36,7 +32,7 @@ const main = () => {
             let province = _.maxBy(data.national_commodity_price[key], 'value');
             if (key === "Cabai Rawit")
                 continue;
-            highestPriceItem.push({ item: key, province });
+            highestPriceItem.push({ item: key, province, roleElement: 'highestPriceElement' });
         }
 
         // console.log(_.sortBy(highestPriceItem, 'province.value'))
@@ -67,12 +63,13 @@ const main = () => {
 
     }
 
-    const onButtonSearchClicked = async () => {
-
+    const onButtonSearchClicked = () => {
+        console.log("hehe", searchBarElement.value)
     }
 
     fetchData()
     searchBarElement.clickEvent = onButtonSearchClicked;
+
 }
 
 const renderErrorData = () => {

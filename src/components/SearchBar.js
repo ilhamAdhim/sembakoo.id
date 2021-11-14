@@ -8,7 +8,7 @@ class SearchBar extends HTMLElement {
     }
 
     get value() {
-        return this.querySelector("#btn_search").value;
+        return this.querySelector("#search_input").value;
     }
 
     set clickEvent(event) {
@@ -16,12 +16,12 @@ class SearchBar extends HTMLElement {
         this.render();
     }
 
+
     render() {
         this.setAttribute('id', "search_section")
         this.innerHTML = `
-            <input type="text" id="search_input" class="search_input" placeholder="Search Region . . ."
-                onkeypress="searchBookByEnter(event)">
-            <button id="btn_search">
+            <input type="text" id="search_input" class="search_input" placeholder="Search Region . . .">
+            <button id="btn_search" type="submit">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </button>
         `;

@@ -71,6 +71,7 @@ main {
 .highest-price-commodities h2 {
   text-align: center;
   margin-bottom: 2em;
+  color: #da0000;
 }
 
 commodity-list {

@@ -1,21 +1,13 @@
 commodity-item {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   width: 30%;
+  display: flex;
+  gap: 2em;
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 26px -10px;
   margin-bottom: 1em;
   padding: 1em;
-}
-
-.no_data_image {
-  margin-top: 15%;
-  width: 300px;
-}
-
-.caption_empty {
-  margin-top: 2em;
-  font-weight: 600;
-  color: grey;
+  border-top: 2px solid #f9a826;
 }
 
 hr {
@@ -36,9 +28,12 @@ hr {
 }
 
 .commodity_image {
-  height: 250px;
   padding: 1em;
+  height: 100px;
+  width: 100px;
   object-fit: contain;
+  background-color: #da0000a8;
+  border-radius: 50%;
 }
 
 .commodity_actions {
