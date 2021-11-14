@@ -14,13 +14,27 @@ class CommodityItem extends HTMLElement {
         this._commodity['commodity_icon'] = `./src/assets/${lowerCasedItem.replace(' ', '-')}.png`;
     }
 
+
+    formatIDR(price) {
+        return Intl.NumberFormat("en-ID", {
+            style: "currency",
+            currency: "IDR",
+        }).format(price);
+    }
+
     render() {
+        let displayPrice;
+        if (this._commodity?.province?.value === null || this._commodity.harga === null)
+            displayPrice = 'Price unavailable'
+        else
+            displayPrice = this._commodity?.province?.value || this._commodity.harga
+
         this.innerHTML = `
         <img src="${this._commodity['commodity_icon']}" class="commodity_image">
         <div class="card_commodity">
-            <div style="">${this._commodity?.province?.display || this._commodity.harga}</div>
-            <div style="">${this._commodity?.item}</div>
-            <div style="">${this._commodity?.province?.name || ''}</div>
+            <div class="commodity_name">${this._commodity?.item}</div>
+            <div class="commodity_price">${this.formatIDR(displayPrice).replace('IDR', 'Rp')}</div>
+            <div class="commodity_province">${this._commodity?.province?.name || ''}</div>
         </div>
         `;
     }

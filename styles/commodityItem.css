@@ -16,10 +16,16 @@ hr {
   padding: 0em;
 }
 
-.commodity_title {
-  padding: 1em;
-  font-weight: 500;
+.commodity_name {
+  font-weight: 600;
   font-size: 1em;
+}
+
+.card_commodity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .commodity_details {
@@ -36,35 +42,8 @@ hr {
   border-radius: 50%;
 }
 
-.commodity_actions {
-  padding: 1em;
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-}
-
-.btn_delete,
-.btn_done {
-  border-radius: 0.3em;
-  border: none;
-  height: 2em;
-}
-
-.btn_delete {
-  color: grey;
-  transition: all ease-in-out 0.5s;
-  border: 1px solid transparent;
-}
-
-.btn_delete:hover {
-  color: red;
-  border: 1px solid red;
-}
-
-.btn_done {
-  color: grey;
-  transition: all ease-in-out 0.5s;
-  border: 1px solid transparent;
+.commodity_province {
+  text-align: end;
 }
 
 .btn_done:hover {
@@ -74,17 +53,39 @@ hr {
 /* Small screen */
 @media only screen and (max-width: 640px) {
   commodity-item {
-    background-color: aliceblue;
+    flex-direction: column;
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  }
+
+  .commodity_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .commodity_name,
+  .commodity_price {
+    text-align: center;
   }
 }
 
 /* Medium screen */
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
   commodity-item {
-    background-color: aliceblue;
+    flex-direction: column;
     width: 29%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  }
+
+  .commodity_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .commodity_name,
+  .commodity_price {
+    text-align: center;
   }
 }

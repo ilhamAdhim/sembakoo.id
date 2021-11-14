@@ -19,18 +19,18 @@ class SearchResult extends HTMLElement {
 
     renderInitial() {
         this.innerHTML = `
-        <div>
+        <div class="search-initial">
             <img src="./src/assets/initial_search_area.svg" alt="" width="400px" height="200px">
-            <div style="text-decoration : underline; font-weight:700"> Let's start searching </div>
+            <div > Let's start searching </div>
         </div>
         `
     }
     render() {
         this.innerHTML = `
-                <div style="background: url('./src/assets/Logo Provinsi ${this._province}.png') no-repeat 50% 25%;
-                 background-size : 80px 100px;">
-                    <center> <b> Provinsi ${this._province} </b></center>
-                    <img src="./src/assets/search_province.svg" alt="">
+                <div class="search_result_province" style="background: url('./src/assets/Logo Provinsi ${this._province}.png') no-repeat 50% 10vh;
+                 background-size : 15vw 17vw;">
+                    <div class="province_name"> Provinsi ${this._province} </div>
+                    <img src="./src/assets/search_province.svg" alt="${this._province}">
                 </div>
                 <div id="search_result_commodities">
                     <commodity-list></commodity-list>

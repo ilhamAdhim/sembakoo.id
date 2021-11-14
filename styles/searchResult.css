@@ -1,22 +1,61 @@
-search-result {
+.search_result_province {
   display: flex;
   margin-top: 6em;
   padding: 0 5vw;
   justify-content: center;
   text-align: center;
   gap: 1em;
+  flex-direction: column;
+
+  background-size: 200px 250px;
+}
+
+.search-initial {
+  text-decoration: underline;
+  font-weight: 700;
+  text-align: center;
+}
+
+#search_result_commodities commodity-list {
+  padding: 0 5vw 2em;
+  margin-top: 2em;
+}
+
+.province_name {
+  text-align: center;
+  font-weight: 700;
+  font-size: x-large;
 }
 
 /* For small screen */
 @media only screen and (max-width: 640px) {
-  search-result {
-    flex-direction: column;
+  .search_result_province {
+    background-size: 100px 150px;
+  }
+
+  .search-initial {
+    margin-top: 4em;
+  }
+
+  .province_name {
+    text-align: center;
+    font-weight: 700;
   }
 }
 
 /* For medium screen */
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
-  search-result {
-    flex-direction: column;
+  .search_result_province {
+    background-size: 100px 150px;
+  }
+
+  #search_result_commodities commodity-list commodity-item {
+    text-align: center;
+    width: 48.1%;
+  }
+
+  .province_name {
+    text-align: center;
+    font-weight: 700;
   }
 }

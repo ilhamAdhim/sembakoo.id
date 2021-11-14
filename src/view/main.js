@@ -1,5 +1,6 @@
 import DataSource from '../data/data-source.js';
 import _, { values } from 'lodash';
+import axios from 'axios';
 
 const STORAGE_KEY = 'PRICE_COMMODITY_APPS'
 
@@ -24,7 +25,7 @@ const main = () => {
             lastUpdatedElement.innerText += ` ${resultAPI.updated_at}`;
             getHighestPriceForCommodities(resultAPI);
         } catch (error) {
-            console.log(error)
+            console.log("cannot fetch data... loading from cache")
             loadDataFromCache();
         }
     }
@@ -35,9 +36,10 @@ const main = () => {
             let province = _.maxBy(data.national_commodity_price[key], 'value');
             if (key === "Cabai Rawit")
                 continue;
-            highestPriceItem.push({ item: key, province, roleElement: 'highestPriceElement' });
+            highestPriceItem.push({ item: key, province });
         }
-
+        // Sort by price in descending order
+        highestPriceItem = _.sortBy(highestPriceItem, (item) => parseInt(item.province.value)).reverse()
         renderHighestPriceForCommodities(highestPriceItem)
     }
 
@@ -83,9 +85,9 @@ const main = () => {
             if (key === "Cabai Rawit")
                 continue;
 
-            if (searchResult !== undefined)
-                provincePriceResult.push({ item: key, harga: searchResult.display, roleElement: 'resultPriceElement' })
+            provincePriceResult.push({ item: key, harga: parseInt(searchResult.value) || null })
         }
+        provincePriceResult = _.sortBy(provincePriceResult, 'harga')
 
         console.log(`Hasil search : ${searchBarElement.value}`, provincePriceResult)
 
@@ -111,7 +113,6 @@ const main = () => {
 
     fetchData()
     searchBarElement.clickEvent = onButtonSearchClicked;
-
 }
 
 

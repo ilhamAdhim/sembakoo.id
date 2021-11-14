@@ -51,7 +51,12 @@ main {
 
 .error-fetch-data img {
   height: 400px;
-  width: 400px;
+  width: 100%;
+}
+
+.error-fetch-data {
+  text-align: center;
+  justify-content: center;
 }
 
 .error-caption,
@@ -154,7 +159,7 @@ commodity-list {
     margin: 0;
   }
   .error-title {
-    margin-top: 1em;
+    margin-top: 2em;
   }
 
   .highest-price-commodities {
@@ -163,6 +168,10 @@ commodity-list {
 
   .highest-price-commodities h2 {
     margin: 2em 0 1em 0;
+  }
+
+  .search_input {
+    width: 15em;
   }
 
   #content {
@@ -192,7 +201,7 @@ commodity-list {
     text-align: center;
     color: #da0000;
     width: 100%;
-    margin: 4em 0 0 0;
+    margin: 0;
   }
   .image_cart svg,
   .error-fetch-data img {
