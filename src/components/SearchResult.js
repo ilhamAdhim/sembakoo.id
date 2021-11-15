@@ -29,7 +29,7 @@ class SearchResult extends HTMLElement {
         this.innerHTML = `
                 <div class="search_result_province" style="background: url('./src/assets/Logo Provinsi ${this._province}.png') no-repeat 50% 10vh;
                  background-size : 15vw 17vw;">
-                    <div class="province_name"> Provinsi ${this._province} </div>
+                    <div class="province_name" data-aos="fade-down"> Provinsi ${this._province} </div>
                     <img src="./src/assets/search_province.svg" alt="${this._province}">
                 </div>
                 <div id="search_result_commodities">

@@ -9,6 +9,11 @@ class CommodityItem extends HTMLElement {
         this.render();
     }
 
+    set delayValue(delayValue) {
+        this._delayValue = delayValue;
+        this.render();
+    }
+
     loadIconCommodity() {
         let lowerCasedItem = this._commodity.item.toLowerCase();
         this._commodity['commodity_icon'] = `./src/assets/${lowerCasedItem.replace(' ', '-')}.png`;
@@ -31,6 +36,8 @@ class CommodityItem extends HTMLElement {
             displayPrice = this.formatIDR(displayPrice).replace('IDR', 'Rp')
         }
 
+        this.setAttribute('data-aos', 'fade-left')
+        this.setAttribute('data-aos-delay', this._delayValue)
         this.innerHTML = `
         <img src="${this._commodity['commodity_icon']}" class="commodity_image">
         <div class="card_commodity">

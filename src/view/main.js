@@ -94,7 +94,9 @@ const main = () => {
             if (key === "Cabai Rawit")
                 continue;
 
-            provincePriceResult.push({ item: key, harga: parseInt(searchResult.value) || null })
+            if (searchResult !== undefined)
+                provincePriceResult.push({ item: key, harga: parseInt(searchResult.value) || null })
+            else searchResult = []
         }
         provincePriceResult = _.sortBy(provincePriceResult, 'harga')
         console.log(`Hasil search : ${searchBarElement.value}`, provincePriceResult)
@@ -121,7 +123,9 @@ const main = () => {
     fetchData()
     searchBarElement.clickEvent = onButtonSearchClicked;
     searchBarElement.pressEvent = onSearchInputEnter;
-}
 
+    AOS.init()
+
+}
 
 export default main;

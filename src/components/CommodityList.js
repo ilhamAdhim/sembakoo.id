@@ -25,9 +25,13 @@ class CommodityList extends HTMLElement {
     }
 
     render() {
+        let delay = 0
         this._commodities?.forEach(commodity => {
+            delay += 50
             const createCommodityItemElement = document.createElement("commodity-item");
             createCommodityItemElement.commodity = commodity;
+            createCommodityItemElement.delayValue = delay;
+
             this.appendChild(createCommodityItemElement);
         });
     }

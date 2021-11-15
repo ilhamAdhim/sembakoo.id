@@ -82,7 +82,8 @@ hr {
   }
 
   .commodity_name,
-  .commodity_price {
+  .commodity_price,
+  .commodity_province {
     text-align: center;
   }
 }
