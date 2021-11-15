@@ -74,8 +74,17 @@ const main = () => {
     }
 
     const onButtonSearchClicked = () => {
+        doSearch()
+    }
+
+    const onSearchInputEnter = (e) => {
+        if (e.key == "Enter")
+            doSearch()
+    }
+
+    const doSearch = () => {
         let provincePriceResult = [];
-        console.log(resultAPI)
+
         for (const key of Object.keys(resultAPI.national_commodity_price)) {
 
             let searchResult = _.find(resultAPI.national_commodity_price[key], (item) => {
@@ -94,7 +103,6 @@ const main = () => {
             renderErrorData(`Cannot find province : ${_.startCase(searchBarElement.value)}`)
         else
             renderSearchResult(provincePriceResult)
-
     }
 
     const renderErrorData = (logError = "Data cannot be loaded") => {
@@ -112,6 +120,7 @@ const main = () => {
 
     fetchData()
     searchBarElement.clickEvent = onButtonSearchClicked;
+    searchBarElement.pressEvent = onSearchInputEnter;
 }
 
 

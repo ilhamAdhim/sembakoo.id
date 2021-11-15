@@ -42,10 +42,6 @@ hr {
   border-radius: 50%;
 }
 
-.commodity_province {
-  text-align: end;
-}
-
 .btn_done:hover {
   color: white;
   background-color: green;
@@ -65,7 +61,8 @@ hr {
   }
 
   .commodity_name,
-  .commodity_price {
+  .commodity_price,
+  .commodity_province {
     text-align: center;
   }
 }
