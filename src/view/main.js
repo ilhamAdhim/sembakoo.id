@@ -69,17 +69,17 @@ const main = () => {
     }
 
     const renderSearchResult = (provincePriceResult) => {
-        searchResultElement.currentProvince = _.startCase(searchBarElement.value)
-        searchResultElement.commodities = provincePriceResult
+        searchResultElement.currentProvince = _.startCase(searchBarElement.value);
+        searchResultElement.commodities = provincePriceResult;
     }
 
     const onButtonSearchClicked = () => {
-        doSearch()
+        doSearch();
     }
 
     const onSearchInputEnter = (e) => {
         if (e.key == "Enter")
-            doSearch()
+            doSearch();
     }
 
     const doSearch = () => {
@@ -95,16 +95,16 @@ const main = () => {
                 continue;
 
             if (searchResult !== undefined)
-                provincePriceResult.push({ item: key, harga: parseInt(searchResult.value) || null })
-            else searchResult = []
+                provincePriceResult.push({ item: key, harga: parseInt(searchResult.value) || null });
+            else searchResult = [];
         }
-        provincePriceResult = _.sortBy(provincePriceResult, 'harga')
-        console.log(`Hasil search : ${searchBarElement.value}`, provincePriceResult)
+        provincePriceResult = _.sortBy(provincePriceResult, 'harga');
+        console.log(`Hasil search : ${searchBarElement.value}`, provincePriceResult);
 
         if (provincePriceResult.length === 0)
-            renderErrorData(`Cannot find province : ${_.startCase(searchBarElement.value)}`)
+            renderErrorData(`Cannot find province : ${_.startCase(searchBarElement.value)}`);
         else
-            renderSearchResult(provincePriceResult)
+            renderSearchResult(provincePriceResult);
     }
 
     const renderErrorData = (logError = "Data cannot be loaded") => {
@@ -124,7 +124,7 @@ const main = () => {
     searchBarElement.clickEvent = onButtonSearchClicked;
     searchBarElement.pressEvent = onSearchInputEnter;
 
-    AOS.init()
+    AOS.init();
 
 }
 

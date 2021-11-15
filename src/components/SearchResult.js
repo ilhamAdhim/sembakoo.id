@@ -8,7 +8,7 @@ class SearchResult extends HTMLElement {
     }
 
     set currentProvince(province) {
-        this._province = province
+        this._province = province;
         this.render();
     }
 
@@ -23,7 +23,7 @@ class SearchResult extends HTMLElement {
             <img src="./src/assets/initial_search_area.svg" alt="" width="400px" height="200px">
             <div > Let's start searching </div>
         </div>
-        `
+        `;
     }
     render() {
         this.innerHTML = `
@@ -38,7 +38,6 @@ class SearchResult extends HTMLElement {
         `;
 
         const searchResultCommoditiesElement = document.querySelector("#search_result_commodities > commodity-list");
-        console.log(searchResultCommoditiesElement)
         searchResultCommoditiesElement.commodities = this._commodities;
     }
 }

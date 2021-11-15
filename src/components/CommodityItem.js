@@ -30,14 +30,14 @@ class CommodityItem extends HTMLElement {
     render() {
         let displayPrice;
         if (this._commodity?.province?.value === null || this._commodity.harga === null)
-            displayPrice = 'Price unavailable'
+            displayPrice = 'Price unavailable';
         else {
-            displayPrice = this._commodity?.province?.value || this._commodity.harga
-            displayPrice = this.formatIDR(displayPrice).replace('IDR', 'Rp')
+            displayPrice = this._commodity?.province?.value || this._commodity.harga;
+            displayPrice = this.formatIDR(displayPrice).replace('IDR', 'Rp');
         }
 
-        this.setAttribute('data-aos', 'fade-left')
-        this.setAttribute('data-aos-delay', this._delayValue)
+        this.setAttribute('data-aos', 'fade-left');
+        this.setAttribute('data-aos-delay', this._delayValue);
         this.innerHTML = `
         <img src="${this._commodity['commodity_icon']}" class="commodity_image">
         <div class="card_commodity">
