@@ -10,6 +10,11 @@
     "author": "ilhamm179",
     "license": "ISC",
     "devDependencies": {
+        "@babel/core": "^7.16.0",
+        "@babel/preset-env": "^7.16.0",
+        "axios": "^0.24.0",
+        "babel-loader": "^8.2.3",
+        "copy-webpack-plugin": "^9.0.1",
         "css-loader": "^6.5.1",
         "eslint": "^8.2.0",
         "eslint-config-google": "^0.14.0",
@@ -23,10 +28,6 @@
         "webpack-merge": "^5.8.0"
     },
     "dependencies": {
-        "@babel/preset-env": "^7.16.0",
-        "axios": "^0.24.0",
-        "babel-loader": "^8.2.3",
-        "copy-webpack-plugin": "^9.0.1",
         "lodash": "^4.17.21",
         "regenerator-runtime": "^0.13.9"
     }

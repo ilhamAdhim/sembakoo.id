@@ -9,21 +9,6 @@ class CommodityList extends HTMLElement {
         this.render();
     }
 
-    renderError(message) {
-        this.innerHTML = `
-        <style>
-           .placeholder {
-               font-weight: lighter;
-               color: rgba(0,0,0,0.5);
-               -webkit-user-select: none;
-               -moz-user-select: none;
-               -ms-user-select: none;
-               user-select: none;
-           }
-       </style>`;
-        this.innerHTML += `<h2 class="placeholder">${message}</h2>`;
-    }
-
     render() {
         let delay = 0;
         this._commodities?.forEach(commodity => {
