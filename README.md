@@ -14,6 +14,6 @@
 [Sembakoo Live Preview](https://sembakoo-id.netlify.app)
 
 ### Update Project ?
-🚧*Work In Progress* 👉 Convert codes to React 18 + Typescript
+🚧*[Work In Progress](https://www.github.com/ilhamAdhim/sembakoo-remake.git)* 👉 Convert codes to React 18 + Typescript
 
 <div>Fav icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
